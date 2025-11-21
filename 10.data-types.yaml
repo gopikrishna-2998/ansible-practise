@@ -1,0 +1,24 @@
+- name: datatypes
+  hosts: local
+  connection: local
+  vars:
+    course: "Devsecops"
+    duration: 5
+    is_live: true
+    tools:
+      - docker
+      - kubernetes
+      - ansible
+    details:
+      cloud: "aws"
+      level: "beginner"
+  tasks:
+  - name: display datatypes
+    ansible.builtin.debug:
+      msg: |
+        course name is {{ course }} 
+        duration is {{ duration }} weeks
+        is_live: {{ is_live }}
+        tools: {{ tools }}
+        details: {{ details }}
+       
