@@ -4,7 +4,7 @@
   become: true
   tasks:
   - name: display names
-    ansible.builtin.debug:
+    ansible.builtin.package:
       name: "Hello {{ item.name }}"
       state: "state {{ item.state }} is installed"
     loop:
