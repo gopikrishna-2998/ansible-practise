@@ -1,0 +1,21 @@
+- name: facts
+  hosts: local
+  connection: local
+  tasks:
+  - name: install nginx
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_facts['os_family'] == "RedHat"
+  
+  - name: install nginx
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_facts['os_family'] == "Debian"
+
+
+
+    
+  
+      
