@@ -1,0 +1,13 @@
+- name: loops example
+  hosts: local
+  connection: local
+  tasks:
+  - name: display names
+    ansible.builtin.debug:
+      name: "Hello {{ item.name }}"
+      state: "state {{ item.state }} is installed"
+    loop:
+      - { name: "nginx", state: "present" }
+      - { name: "zip", state: "present" }
+      - { name: "mysql", state: "present" }
+     
