@@ -1,0 +1,13 @@
+- name: loops example
+  hosts: local
+  connection: local
+  tasks:
+  - name: display names
+    ansible.builtin.package:
+      msg: "Hello {{ item }}"
+      state: latest
+    loop:
+    - nginx
+    - zip
+    - mysql
+     
